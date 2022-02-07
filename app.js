@@ -1,6 +1,5 @@
 "use strict";
 
-
 const Gameboard = (() => {
    const board = [
       [null, null, null],
@@ -17,9 +16,6 @@ const Player = (name, symb) => {
    const playSymb = () => symb;
    return { turn, getName, playSymb };
 };
-
-
-
 
 
 const gameFlow = (() => {
@@ -126,6 +122,3 @@ const gameFlow = (() => {
    return { gamePlaying, playsCount }
 
 })();
-
-
-
