@@ -1,3 +1,4 @@
+"use strict";
 
 
 const Gameboard = (() => {
@@ -31,15 +32,15 @@ const gameFlow = (() => {
 
       if (gameFlow.gamePlaying && player1.turn && e.target.innerText == "") {
          e.target.innerText = player1.playSymb();
-         indexI = e.target.id[6];
-         indexJ = e.target.id[8];
+         let indexI = e.target.id[6];
+         let indexJ = e.target.id[8];
          Gameboard.board[indexI][indexJ] = player1.playSymb();
          player1.turn = false;
          player2.turn = true;
       } else if (gameFlow.gamePlaying && player2.turn && e.target.innerText == "") {
          e.target.innerText = player2.playSymb();
-         indexI = e.target.id[6];
-         indexJ = e.target.id[8];
+         let indexI = e.target.id[6];
+         let indexJ = e.target.id[8];
          Gameboard.board[indexI][indexJ] = player2.playSymb();
          player2.turn = true;
          player1.turn = true;
@@ -113,17 +114,18 @@ const gameFlow = (() => {
    }
 
    const checkTie = () => {
-      if (gameFlow.playsCount === 9) {
+      if (gameFlow.playsCount === 9 && gameFlow.gamePlaying != false) {
          console.log('tie')
          gameFlow.gamePlaying = false;
       }
    }
 
    const squares = document.querySelectorAll('.square')
-   for (let i = 0; i < squares.length; i++) {
-      squares[i].addEventListener('click', play)
-   }
+   squares.forEach((square) => square.addEventListener('click', play))
 
    return { gamePlaying, playsCount }
 
 })();
+
+
+
