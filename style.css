@@ -1,0 +1,24 @@
+body{
+   background-color: black;
+}
+
+.board{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   border: 10px solid blanchedalmond;
+   gap: 10px;
+   max-width: fit-content;
+   background-color: whitesmoke;
+}
+
+.square{
+   height: 200px;
+   width: 200px;
+   background-color: black;
+   color: whitesmoke;
+   font-size: 3rem;
+   font-weight: 800;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
