@@ -38,7 +38,7 @@ const gameFlow = (() => {
          let indexI = e.target.id[6];
          let indexJ = e.target.id[8];
          Gameboard.board[indexI][indexJ] = player2.playSymb();
-         player2.turn = true;
+         player2.turn = false;
          player1.turn = true;
       }
       if (gameFlow.gamePlaying) {
